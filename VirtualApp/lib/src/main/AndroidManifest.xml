@@ -1492,9 +1492,11 @@
             android:exported="false"
             android:process=":p49" />
 
+        <!--android:authorities="virtual.fileprovider"-->
+
         <provider
             android:name=".client.stub.TrampolineContentProvider"
-            android:authorities="virtual.fileprovider"
+            android:authorities="secspace.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true"
             android:process=":trampoline" />

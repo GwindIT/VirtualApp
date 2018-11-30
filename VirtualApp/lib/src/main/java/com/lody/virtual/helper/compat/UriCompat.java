@@ -20,7 +20,8 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 public class UriCompat {
-    public static String AUTH = "virtual.fileprovider";
+    //    public static String AUTH = "virtual.fileprovider";
+    public static String AUTH = "secspace.fileprovider";
     private static boolean DEBUG = false;
     private static final String TAG = "UriCompat";
 
