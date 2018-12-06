@@ -21,6 +21,7 @@ public class AutoFillManagerStub extends BinderInvocationProxy {
     private static final String TAG = "AutoFillManagerStub";
 
     private static final String AUTO_FILL_NAME = "autofill";
+
     public AutoFillManagerStub() {
         super(IAutoFillManager.Stub.asInterface, AUTO_FILL_NAME);
     }
@@ -50,10 +51,17 @@ public class AutoFillManagerStub extends BinderInvocationProxy {
             public String getMethodName() {
                 return "startSession";
             }
+
             @Override
             public boolean beforeCall(Object who, Method method, Object... args) {
                 MethodParameterUtils.replaceLastAppPkg(args);
                 return super.beforeCall(who, method, args);
+            }
+
+            @Override
+            public Object call(Object who, Method method, Object... args) throws Throwable {
+                return 0;//不进行自动填充,不发送到系统,直接返回.Sec_Guo
+//                return super.call(who, method, args);
             }
         });
         addMethodProxy(new MethodProxy() {
@@ -61,6 +69,7 @@ public class AutoFillManagerStub extends BinderInvocationProxy {
             public String getMethodName() {
                 return "updateOrRestartSession";
             }
+
             @Override
             public boolean beforeCall(Object who, Method method, Object... args) {
                 MethodParameterUtils.replaceLastAppPkg(args);
@@ -72,6 +81,7 @@ public class AutoFillManagerStub extends BinderInvocationProxy {
             public String getMethodName() {
                 return "isServiceEnabled";
             }
+
             @Override
             public boolean beforeCall(Object who, Method method, Object... args) {
                 MethodParameterUtils.replaceLastAppPkg(args);
