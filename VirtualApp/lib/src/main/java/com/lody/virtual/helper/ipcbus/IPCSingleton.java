@@ -23,4 +23,8 @@ public class IPCSingleton<T> {
         return instance;
     }
 
+    public void clearInstance() {
+        instance = null;
+    }
+
 }

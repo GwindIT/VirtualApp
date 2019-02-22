@@ -52,6 +52,9 @@ public class VActivityManager {
         return singleton.get();
     }
 
+    public void clearService() {
+        singleton.clearInstance();
+    }
 
     public int startActivity(Intent intent, ActivityInfo info, IBinder resultTo, Bundle options, String resultWho, int requestCode, int userId) {
         try {

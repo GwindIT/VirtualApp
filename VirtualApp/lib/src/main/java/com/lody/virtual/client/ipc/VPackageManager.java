@@ -35,6 +35,10 @@ public class VPackageManager {
         return singleton.get();
     }
 
+    public void clearService() {
+        singleton.clearInstance();
+    }
+
     public int checkPermission(String permName, String pkgName, int userId) {
         try {
             return getService().checkPermission(permName, pkgName, userId);

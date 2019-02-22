@@ -270,6 +270,11 @@ public final class VirtualCore {
         return singleton.get();
     }
 
+
+    public void clearService() {
+        singleton.clearInstance();
+    }
+
     /**
      * @return If the current process is used to VA.
      */
@@ -529,6 +534,7 @@ public final class VirtualCore {
             return VirtualRuntime.crash(e);
         }
     }
+
 
     public boolean isStartup() {
         return isStartUp;
